@@ -8,8 +8,9 @@ import android.text.Editable;
         import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 
-        import java.io.IOException;
+import java.io.IOException;
         import java.io.PipedReader;
         import java.io.PipedWriter;
 
@@ -18,6 +19,8 @@ public class PipeExampleActivity extends Activity {
 
     private static final String TAG = "PipeExampleActivity";
     private EditText editText;
+    static private TextView tv;
+    static String s="";
 
     PipedReader r;
     PipedWriter w;
@@ -38,6 +41,7 @@ public class PipeExampleActivity extends Activity {
 
         setContentView(R.layout.activity_pipe);
         editText = (EditText) findViewById(R.id.edit_text);
+        tv= (TextView) findViewById(R.id.textView);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
@@ -73,6 +77,7 @@ public class PipeExampleActivity extends Activity {
             r.close();
             w.close();
         } catch (IOException e) {
+
         }
     }
 
@@ -89,7 +94,14 @@ public class PipeExampleActivity extends Activity {
                     int i;
                     while((i = reader.read()) != -1){
                         char c = (char) i;
-                        //ADD TEXT PROCESSING LOGIC HERE
+                        s=s+c;
+                       try {
+                           tv.setText(s);
+                       }
+                       catch (Exception e){
+                           Log.d("Error is :",e.getMessage().toString());
+                       }
+                       //ADD TEXT PROCESSING LOGIC HERE
                         Log.d(TAG, "char = " + c);
                     }
 

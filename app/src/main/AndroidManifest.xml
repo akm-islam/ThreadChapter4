@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PipeExampleActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LooperActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".looperActivityVivz"
+            android:label="@string/title_activity_looper_vivz"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

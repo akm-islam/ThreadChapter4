@@ -18,6 +18,14 @@
             android:layout_height="wrap_content"
             android:text="LooperActivity"
             android:onClick="onLooperActivity"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LooperFromVivz"
+            android:onClick="onlooperActivityVivz"
+            />
+
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -33,6 +41,7 @@
             android:layout_height="wrap_content"
             android:text="HandlerCallbackActivity"
             android:onClick="onHandlerCallbackActivity"/>
+
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -40,4 +49,5 @@
             android:onClick="onMQDebugActivity"/>
 
     </LinearLayout>
+
 </ScrollView>

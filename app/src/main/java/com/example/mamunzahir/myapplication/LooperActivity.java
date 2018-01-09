@@ -19,6 +19,8 @@ public class LooperActivity extends Activity {
 
         public void run() {
             Looper.prepare();
+            //The long running operations are placed inside looper
+
             mHandler = new Handler() {
                 public void handleMessage(Message msg) {
                     if(msg.what == 0) {
@@ -26,6 +28,7 @@ public class LooperActivity extends Activity {
                     }
                 }
             };
+
             Looper.loop();
         }
 

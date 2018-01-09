@@ -3,6 +3,7 @@ package com.example.mamunzahir.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class Chapter4Activity extends Activity {
@@ -14,13 +15,20 @@ public class Chapter4Activity extends Activity {
     }
 
     public void onPipeActivity(View v) {
-        startActivity(new Intent(this, PipeExampleActivity.class));
+        try {
+            startActivity(new Intent(this, PipeExampleActivity.class));
+        }
+        catch (Exception e){
+            Log.e("Error is :",e.getMessage().toString());
+        }
     }
 
     public void onLooperActivity(View v) {
         startActivity(new Intent(this, LooperActivity.class));
     }
-
+public void onlooperActivityVivz(View v){
+        startActivity(new Intent(this,looperActivityVivz.class));
+}
     public void onConsumeAndQuitThreadActivity(View v) {
         startActivity(new Intent(this, ConsumeAndQuitThreadActivity.class));
     }
@@ -37,3 +45,6 @@ public class Chapter4Activity extends Activity {
         startActivity(new Intent(this, MQDebugActivity.class));
     }
 }
+
+
+//https://www.youtube.com/watch?v=fZTJflHJoBY   android looper
